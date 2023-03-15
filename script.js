@@ -9,8 +9,8 @@ let player1Score = 0;
 let player2Score = 0;
 
 const timerDisplay = document.getElementById('timer');
-const startButton = document.getElementById('start');
-const stopButton = document.getElementById('stop');
+const startButton = document.getElementById('startButton');
+const resetTimerBtn = document.getElementById('resetTime');
 const playerAButton = document.getElementById('playerA');
 const playerBButton = document.getElementById('playerB');
 const player1ScoreDisplay = document.getElementById('player1Score');
@@ -19,18 +19,41 @@ const player1PlusButton = document.getElementById('player1Plus');
 const player1MinusButton = document.getElementById('player1Minus');
 const player2PlusButton = document.getElementById('player2Plus');
 const player2MinusButton = document.getElementById('player2Minus');
-const resetButton = document.getElementById('reset');
+const resetButtonA = document.getElementById('resetA');
+const resetButtonB = document.getElementById('resetB');
 
-// Set up event listeners
-startButton.addEventListener('click', startTimer);
-stopButton.addEventListener('click', stopTimer);
+
+resetTimerBtn.addEventListener('click', function(){
+    timeLeft = 45;
+    timerDisplay.innerHTML = '45';
+});
+
+
+startButton.addEventListener("click", function() {
+
+    if(startButton.textContent == "Start"){
+        startButton.innerHTML = "Stop";
+        startTimer();
+        return;
+    }
+
+    if(startButton.textContent == "Stop"){
+        startButton.innerHTML = "Start";
+        stopTimer();
+        return;
+    }
+
+});
+
 playerAButton.addEventListener('click', extendPlayerA);
 playerBButton.addEventListener('click', extendPlayerB);
 player1PlusButton.addEventListener('click', () => updateScore('player1', 1));
 player1MinusButton.addEventListener('click', () => updateScore('player1', -1));
 player2PlusButton.addEventListener('click', () => updateScore('player2', 1));
 player2MinusButton.addEventListener('click', () => updateScore('player2', -1));
-resetButton.addEventListener('click', resetScores);
+resetButtonA.addEventListener('click', resetScoresA);
+resetButtonB.addEventListener('click', resetScoresB);
+
 
 function startTimer() {
   if (countdown) return; // Don't start if already running
@@ -97,13 +120,22 @@ function updateScore(player, delta) {
   }
 }
 
-function resetScores() {
+function resetScoresA() {
   player1Score = 0;
-  player2Score = 0;
   player1ScoreDisplay.innerHTML = 0;
-  player2ScoreDisplay.innerHTML = 0;
   document.getElementById('player1Name').value = '';
-  document.getElementById('player2Name').value = '';
+}
+function resetScoresB() {
+    player2Score = 0;
+    player2ScoreDisplay.innerHTML = 0;
+    document.getElementById('player2Name').value = '';
+  }
+
+function resetTimer(){
+
+    timeLeft = 10;
+    timerDisplay.innerHTML = '10';
+
 }
 
 // Reset the timer and

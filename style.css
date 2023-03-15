@@ -1,64 +1,187 @@
-.container {
+
+body {
+    background-image: linear-gradient(#014479, #0368B6);    
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: aliceblue;
+}
+
+.mainHeading {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    font-size: 44px;
+    color: orange;
+    word-spacing: 10px;
+    text-align: center;
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: row;
+    align-content: center; 
+    justify-content: space-around;
+}
+
+.firstPlayerBox, .scoreBox, .secondPlayerBox {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  #timer {
-    font-size: 10rem;
-  }
-  
-  .buttons {
+    grid-row-gap: 20px;
+}
+
+.playerLogo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.extensionBtn{
+    width: 200px;
+    height: 42px;
+    border-radius: 4px;
+    background-color: green;
+    cursor: pointer;
+}
+
+.extensionBtn p, .scoreTitle p, .addBtns p, .lessBtns p, .resetBtns p{
+    height: inherit;
     display: flex;
     justify-content: center;
-    margin: 2rem;
-  }
-  
-  button {
-    padding: 1rem 2rem;
-    font-size: 2rem;
-    margin: 0 1rem;
-    border-radius: 5px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  button:active {
-    transform: translateY(1px);
-  }
-  
-  .scores {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-  }
-  
-  .player {
+}
+
+.scoreHeading {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.scoreTitle {
+    width: 140px;
+    height: 42px;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+}
+
+.actionsBtns {
     display: flex;
-    align-items: center;
-    margin: 1rem;
-  }
-  
-  input {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    padding: 0.5rem;
-  }
-  
-  .score {
+    flex-direction: row;
+    border-radius: 4px;
+    background: white;
+    color: black;
+    height: 42px;
+    width: 200px;
+}
+
+.addBtns, .lessBtns, .resetBtns{
+   height: inherit;
+    width:  42px;
+}
+
+.resetBtns{
+/*    width:  102px;*/
     display: flex;
+    flex-direction: row;
     align-items: center;
-  }
-  
-  #reset {
-    margin-top: 2rem;
-  }
-  
+    cursor: pointer;
+}
+
+.addBtns p {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.lessBtns p{
+    font-size: 22px;
+    color: green;
+    cursor: pointer;
+}
+.resetImg {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+.resetBtns p{
+    font-size: 18px;
+    margin: 0 8px;
+}
+
+
+
+
+
+
+.scoreBox{
+  align-items: center;  
+}
+.scoreShow{
+    height: 50%;
+    width: 120%;
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+.scoreShow h1{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.resetTimerBtn {
+    width: 140px;
+    height: 42px;
+    border-radius: 4px;
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.resetTimerBtn p{
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.timerActionBtns {
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    background: white;
+    color: black;
+    height: 42px;
+    width: 170px; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.timerActionBtns p {
+    margin: 0px;
+}
+.timerActionBtns img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+
+
+
+.secondPlayerBox{
+    align-items: flex-end;
+}
+
+
+
+
+
+
+
+
